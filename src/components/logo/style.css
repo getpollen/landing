@@ -1,0 +1,13 @@
+.logoContainer {
+    display: inline-flex;
+    align-items: center;
+}
+
+.logoText {
+    margin-left: .7em;
+    text-transform: lowercase;
+    font-size: 2.2em;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: lighter;
+    margin-top: -.2em;
+}

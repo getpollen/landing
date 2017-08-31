@@ -1,0 +1,38 @@
+.bottomCurve {
+    position: absolute;
+    bottom: 0;
+}
+
+.heroForm {
+    position: relative;
+    top: -4em;
+}
+
+.titleContainer {
+    padding-bottom: 8em;
+    padding-top: 1em;
+}
+
+.emailInput, .emailSubmit {
+    border: none;
+    padding: 1em 2em;
+    border-radius: 2em;
+    font-size: 1em;
+    border-radius: 2em;
+    position: absolute;
+    top: 0;
+}
+
+.emailInput {
+    width: 100%;
+    box-shadow: 0 0 16px 1px rgba(0, 0, 0, 0.2);
+}
+
+.emailSubmit {
+    right: 0;
+    color: #FFF;
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(to right, rgba(152,26,241,1) 0%, rgba(217,3,237,1) 100%);
+    text-transform: uppercase;
+    font-weight: bold;
+}
