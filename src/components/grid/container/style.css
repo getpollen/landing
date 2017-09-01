@@ -4,8 +4,8 @@
     margin-right: auto;
 	max-width: 1024px;
     width: 100%;
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 2em;
+    padding-right: 2em;
     display: flex;
     flex-direction: column;
     z-index: 20;

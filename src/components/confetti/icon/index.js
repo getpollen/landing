@@ -4,30 +4,45 @@ import * as _ from 'lodash/fp'
 import style from './style'
 
 import Circle from './circle'
-import Heart from './heart'
+// import Heart from './heart'
 import Square from './square'
 import Squiggle from './squiggle'
 import Star from './star'
 
-const ICONS = [Circle, Heart, Square, Squiggle, Star]
+const ICONS = [Circle, Square, Squiggle, Star]
 const ICON_SIZE = 30
-const LOWER_BOUND = -0.05
-const UPPER_BOUND = 1.05
+const POS_LOWER_BOUND = -0.05
+const POS_UPPER_BOUND = 1.05
+const ROT_LOWER_BOUND = 0
+const ROT_UPPER_BOUND = 360
 
 const createRandomIcon = props => {
   return _.merge(
     {
       icon: _.sample(ICONS),
-      x: _.random(LOWER_BOUND, UPPER_BOUND, true),
-      y: _.random(LOWER_BOUND, UPPER_BOUND, true),
-      velocityX: _.random(-0.001, 0.001, true),
-      velocityY: _.random(-0.001, 0.001, true),
+      x: _.random(POS_LOWER_BOUND, POS_UPPER_BOUND, true),
+      y: _.random(POS_LOWER_BOUND, POS_UPPER_BOUND, true),
+      velocityX: _.random(-0.0005, 0.0005, true),
+      velocityY: _.random(-0.0005, 0.0005, true),
       opacity: _.random(0.3, 0.5, true),
-      rotation: _.random(0, 360)
+      rotation: _.random(ROT_LOWER_BOUND, ROT_UPPER_BOUND, true),
+      rotationVelocity: _.random(-0.5, 0.5, true)
     },
     props
   )
 }
+
+const change = _.curry((lowerBound, upperBound, diff, val) => {
+  let newVal = val + diff
+  if (newVal > upperBound) {
+    newVal = lowerBound
+  } else if (newVal < lowerBound) {
+    newVal = upperBound
+  }
+  return newVal
+})
+const move = change(POS_LOWER_BOUND, POS_UPPER_BOUND)
+const rotate = change(ROT_LOWER_BOUND, ROT_UPPER_BOUND)
 
 export default class Icon extends Component {
   constructor(props) {
@@ -42,8 +57,9 @@ export default class Icon extends Component {
   componentWillReceiveProps({ frame }) {
     if (this.props.frame != frame) {
       this.setState({
-        x: this._move(this.state.x, this.state.velocityX),
-        y: this._move(this.state.y, this.state.velocityY)
+        x: move(this.state.velocityX, this.state.x),
+        y: move(this.state.velocityY, this.state.y),
+        rotation: rotate(this.state.rotationVelocity, this.state.rotation)
       })
     }
   }
@@ -55,15 +71,5 @@ export default class Icon extends Component {
       rotation: this.state.rotation,
       opacity: this.state.opacity
     }
-  }
-
-  _move(position, velocity) {
-    let newPosition = position + velocity
-    if (newPosition > UPPER_BOUND) {
-      newPosition = LOWER_BOUND
-    } else if (newPosition < LOWER_BOUND) {
-      newPosition = UPPER_BOUND
-    }
-    return newPosition
   }
 }

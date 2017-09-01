@@ -13,7 +13,7 @@ export default class Hero extends Component {
       <Section>
         <Container>
           <Row>
-            <Column width={7}>
+            <Column width={7} className={style.heroContent}>
               <Title />
               <Form />
             </Column>
@@ -22,7 +22,7 @@ export default class Hero extends Component {
             </Column>
           </Row>
         </Container>
-        <Curve className={style.bottomCurve} />
+        <Curve />
       </Section>
     )
   }

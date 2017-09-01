@@ -6,7 +6,7 @@ import Icon from './icon'
 import style from './style'
 
 const ICON_NUM = 50
-const THROTTLE = 10
+const THROTTLE = 1000 / 60
 
 export default class Confetti extends Component {
   constructor(props) {
