@@ -2,3 +2,14 @@
     width: 100%;
     height: auto;
 }
+
+.footer {
+    padding-top: 1em;
+    padding-bottom: 2em;
+    font-size: 1.25em;
+    font-weight: normal;
+}
+
+.footer > div:last-child {
+    text-align: right;
+}

@@ -1,4 +1,5 @@
 import { h, Component } from 'preact'
+import style from './style'
 
 export default class Phone extends Component {
   render() {

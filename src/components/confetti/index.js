@@ -26,7 +26,7 @@ export default class Confetti extends Component {
     )
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const update = _.throttle(THROTTLE, () => {
       this._animate()
       this.animation = window.requestAnimationFrame(update)

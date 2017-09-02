@@ -23,6 +23,8 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "firebase-tools": "^3.10.0",
+    "global": "^4.3.2",
     "lodash": "^4.17.4",
     "preact": "^8.2.4",
     "preact-compat": "^3.17.0",

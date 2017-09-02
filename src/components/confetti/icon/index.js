@@ -65,6 +65,14 @@ export default class Icon extends Component {
   }
 
   _transformation() {
+    if (typeof window === 'undefined') {
+      return {
+        x: this.state.x,
+        y: this.state.y,
+        rotation: this.state.rotation,
+        opacity: 0
+      }
+    }
     return {
       x: this.state.x * window.innerWidth,
       y: this.state.y * window.innerHeight,

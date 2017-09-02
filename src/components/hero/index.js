@@ -17,7 +17,7 @@ export default class Hero extends Component {
               <Title />
               <Form />
             </Column>
-            <Column width={4} offset={1}>
+            <Column width={4} offset={1} className={style.phone}>
               <Phone />
             </Column>
           </Row>
