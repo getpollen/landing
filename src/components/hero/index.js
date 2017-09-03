@@ -12,12 +12,20 @@ export default class Hero extends Component {
     return (
       <Section>
         <Container>
-          <Row>
-            <Column width={7} className={style.heroContent}>
+          <Row sm={{ collapsed: true }}>
+            <Column
+              lg={{ width: 7 }}
+              md={{ width: 8 }}
+              className={style.heroContent}
+            >
               <Title />
               <Form />
             </Column>
-            <Column width={4} offset={1} className={style.phone}>
+            <Column
+              lg={{ width: 4, offset: 1 }}
+              md={{ width: 4 }}
+              className={style.phone}
+            >
               <Phone />
             </Column>
           </Row>

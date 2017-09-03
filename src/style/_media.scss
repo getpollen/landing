@@ -1,0 +1,37 @@
+.visibleSm, .visibleMd, .visibleXs {
+    display: none;
+}
+
+.hiddenLg {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .hiddenMd {
+        display: none;
+    }
+
+    .visibleMd {
+        display: flex;
+    }
+}
+
+@media (max-width: 767px) {
+    .hiddenSm {
+        display: none;
+    }
+
+    .visibleSm {
+        display: flex;
+    }
+}
+
+@media (max-width: 575px) {
+    .hiddenXs {
+        display: none;
+    }
+
+    .visibleXs {
+        display: flex;
+    }
+}

@@ -10,3 +10,12 @@ h2 {
 strong {
     font-weight: bold;
 }
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 3.25em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+}

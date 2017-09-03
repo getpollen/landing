@@ -10,22 +10,22 @@ export default class Features extends Component {
     return (
       <Section className={style.features}>
         <Container columns={20}>
-          <Row className={style.cards}>
-            <Column width={6}>
+          <Row className={style.cards} sm={{ collapsed: true }}>
+            <Column lg={{ width: 6 }}>
               <Card icon={Telescope} title="Discover">
                 With our unique recommendation algorithm
                 find podcasts and episodes perfectly suited
                 to you no matter your mood.
               </Card>
             </Column>
-            <Column width={6} offset={1}>
+            <Column lg={{ width: 6, offset: 1 }}>
               <Card icon={IPod} title="Enjoy">
                 Listen to all of your favorite podcasts
                 on all of your devices. Pollen syncs your
                 subscriptions and episodes with the cloud.
               </Card>
             </Column>
-            <Column width={6} offset={1}>
+            <Column lg={{ width: 6, offset: 1 }}>
               <Card icon={Satellite} title="Share">
                 Enjoy your favorite podcasts with friends and family.
                 Discuss, share and discover with members of the
