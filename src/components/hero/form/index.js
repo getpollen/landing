@@ -1,9 +1,7 @@
 import { h, Component } from 'preact'
 import style from './style'
 import classNames from 'classnames'
-
-const fakeSubmit = () =>
-  new Promise((resolve, reject) => window.setTimeout(reject, 2000))
+import { insertEmail } from '../../../db'
 
 export default class Form extends Component {
   render() {
@@ -13,6 +11,7 @@ export default class Form extends Component {
           type="email"
           value={this.state.email}
           onInput={this.updateEmail.bind(this)}
+          required={true}
           placeholder="Enter your email for updates"
           className={classNames(style.emailInput, 'hiddenXs')}
         />
@@ -20,6 +19,7 @@ export default class Form extends Component {
           type="email"
           value={this.state.email}
           onInput={this.updateEmail.bind(this)}
+          required={true}
           placeholder="Your Email"
           className={classNames(style.emailInput, 'visibleXs')}
         />
@@ -57,21 +57,23 @@ export default class Form extends Component {
       error: false,
       success: false
     })
-    fakeSubmit()
-      .then(() =>
+    insertEmail(this.state.email)
+      .then(() => {
+        console.log(arguments)
         this.setState({
           submitting: false,
           error: false,
           success: true
         })
-      )
-      .catch(() =>
+      })
+      .catch(xhr => {
+        console.log(xhr)
         this.setState({
           submitting: false,
           error: true,
           success: false
         })
-      )
+      })
   }
 
   isDisabled() {

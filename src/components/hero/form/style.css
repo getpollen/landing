@@ -44,8 +44,11 @@
 /* base */
 
 .emailSubmit:before, .emailSubmit:after {
-    content: "Keep me in the know";
     transition: all 0.3s ease-in-out;
+}
+
+.emailSubmit:after {
+    content: "Keep me in the know";
 	background: rgba(152,26,241,1);
 	background: linear-gradient(to right, rgba(152,26,241,1) 0%, rgba(217,3,237,1) 100%);
     opacity: 1;

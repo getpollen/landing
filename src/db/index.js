@@ -1,7 +1,7 @@
-import db from './db'
+import { update, uuid } from './firebase'
 
 export const insertEmail = email =>
-  db.ref(`signups/${email}`).set({
+  update('PUT', `signups/${uuid()}`, {
     email: email,
     timestamp: Date.now()
   })
