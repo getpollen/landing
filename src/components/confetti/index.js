@@ -12,7 +12,9 @@ export default class Confetti extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      frame: 0
+      frame: 0,
+      iconNum: ICON_NUM,
+      timestamp: 0
     }
   }
 
@@ -20,7 +22,7 @@ export default class Confetti extends Component {
     return (
       <div class={style.confetti}>
         {_.map(key => <Icon key={key} frame={this.state.frame} />)(
-          _.range(ICON_NUM + 1, 1)
+          _.range(this.state.iconNum, 1)
         )}
       </div>
     )
@@ -39,6 +41,23 @@ export default class Confetti extends Component {
   }
 
   _animate() {
-    this.setState({ frame: this.state.frame + 1 })
+    const timestamp = Date.now()
+    let iconNumChange = 0
+    if (this.state.timestamp > 0) {
+      const diff = timestamp - this.state.timestamp > 30
+      if (diff > 50) {
+        iconNumChange = -3
+      } else if (diff < 20) {
+        iconNumChange = 1
+      }
+    }
+    this.setState({
+      frame: this.state.frame + 1,
+      iconNum: Math.min(
+        Math.max(0, this.state.iconNum + iconNumChange),
+        ICON_NUM
+      ),
+      timestamp: timestamp
+    })
   }
 }
