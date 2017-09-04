@@ -1,13 +1,3 @@
 .row {
     display: flex;
 }
-
-.rowCollapsed {
-    flex-direction: column;
-}
-
-.rowCollapsed > div {
-    margin-left: 0 !important;
-    margin-top: 2em !important;
-    width: 100% !important;
-}

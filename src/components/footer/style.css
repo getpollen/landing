@@ -12,5 +12,5 @@
 }
 
 .footer > div {
-    width: auto !important;
+    flex-grow: 0;
 }

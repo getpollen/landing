@@ -58,22 +58,20 @@ export default class Form extends Component {
       success: false
     })
     insertEmail(this.state.email)
-      .then(() => {
-        console.log(arguments)
+      .then(() =>
         this.setState({
           submitting: false,
           error: false,
           success: true
         })
-      })
-      .catch(xhr => {
-        console.log(xhr)
+      )
+      .catch(() =>
         this.setState({
           submitting: false,
           error: true,
           success: false
         })
-      })
+      )
   }
 
   isDisabled() {

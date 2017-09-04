@@ -20,12 +20,19 @@
 
 .phone {
     perspective: 1000px;
+    width: 55%;
+}
+
+.phone > svg {
+    transform: rotateY(-10deg);
 }
 
 @media (max-width: 991px) {
+    .phone {
+        width: 65%;
+    }
     .phone > svg {
-        position: absolute;
-        transform: rotateY(-10deg) translateX(10%);
+        transform: scale(0.9) rotateY(-10deg);
     }
 }
 

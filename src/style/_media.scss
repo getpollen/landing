@@ -11,6 +11,16 @@
         display: none;
     }
 
+    .collapseMd {
+        flex-direction: column;
+
+        > div {
+            margin-left: 0 !important;
+            margin-top: 2em !important;
+            width: 100% !important;
+        }
+    }
+
     .visibleMd {
         display: flex;
     }
@@ -19,6 +29,16 @@
 @media (max-width: 767px) {
     .hiddenSm {
         display: none;
+    }
+
+    .collapseSm {
+        flex-direction: column;
+
+        > div {
+            margin-left: 0 !important;
+            margin-top: 2em !important;
+            width: 100% !important;
+        }
     }
 
     .visibleSm {
@@ -30,6 +50,17 @@
     .hiddenXs {
         display: none;
     }
+
+    .collapseXs {
+        flex-direction: column;
+
+        > div {
+            margin-left: 0 !important;
+            margin-top: 2em !important;
+            width: 100% !important;
+        }
+    }
+
 
     .visibleXs {
         display: flex;
