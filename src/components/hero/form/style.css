@@ -1,4 +1,9 @@
-.emailInput, .emailSubmit {
+.heroForm {
+	position: relative;
+	top: -4em;
+}
+
+.emailInput, .emailSubmit, .emailSubmit:before, .emailSubmit:after {
 	border: none;
 	padding: 1em 2em;
 	border-radius: 2em;
@@ -6,6 +11,17 @@
 	border-radius: 2em;
 	position: absolute;
 	top: 0;
+    display: block;
+    height: 3em;
+}
+
+.emailSubmit:before, .emailSubmit:after {
+    content: "&nbsp;";
+    text-align: center;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    line-height: 3em;
 }
 
 .emailInput {
@@ -17,26 +33,85 @@
 	right: 0;
 	color: #FFF;
 	box-shadow: -5px 0 5px rgba(0, 0, 0, 0.05);
-	background: linear-gradient(to right, rgba(152,26,241,1) 0%, rgba(217,3,237,1) 100%);
 	text-transform: uppercase;
 	font-weight: bold;
+    white-space: nowrap;
+    text-align: center;
+    width: 16em;
+    transition: all 0.3s ease-in-out;
 }
 
-.emailSubmitLabelSm {
-    display: none;
+/* base */
+
+.emailSubmit:before, .emailSubmit:after {
+    content: "Keep me in the know";
+    transition: all 0.3s ease-in-out;
+	background: rgba(152,26,241,1);
+	background: linear-gradient(to right, rgba(152,26,241,1) 0%, rgba(217,3,237,1) 100%);
+    opacity: 1;
 }
 
-@media (max-width: 52em) {
-    .emailSubmitLabelLg {
-        display: none;
+.emailSubmit:before {
+    opacity: 0;
+}
+
+@media (max-width: 991px) {
+    .emailSubmit {
+        width: 10em;
     }
-    .emailSubmitLabelSm {
-        display: inline;
+
+    .emailSubmit:before, .emailSubmit:after {
+        content: "Update Me"
     }
 }
 
-.heroForm {
-	position: relative;
-	top: -4em;
+/* Submitting */
+
+.emailSubmitting {
+    width: 100%;
 }
 
+.emailSubmitting:before, .emailSuccess:before, .emailError:before {
+    content: "Saving";
+	background: rgba(85,85,85,1);
+	background: linear-gradient(to right, rgba(80,80,80,1) 0%, rgba(90,90,90,1) 100%);
+    opacity: 1
+}
+
+.emailSubmitting:after {
+    opacity: 0
+}
+
+/* Success */
+
+.emailSuccess {
+    width: 100%;
+}
+
+.emailSuccess:after {
+    content: "Look out for Updates!";
+	background: rgb(93, 212, 108);
+    background: linear-gradient(to right, rgb(93, 212, 108) 0%, rgb(10, 235, 131) 100%);
+    opacity: 1
+}
+
+.emailSuccess:before {
+    opacity: 0
+}
+
+/* Success */
+
+.emailError {
+    width: 10em;
+}
+
+.emailError:after {
+    content: "Oops!";
+    background: rgb(212, 93, 93);
+    background: linear-gradient(to right, rgb(212, 93, 93) 0%, rgb(235, 10, 10) 100%);
+    opacity: 1
+}
+
+.emailSuccess:before {
+    opacity: 0
+}
