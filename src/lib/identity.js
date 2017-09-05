@@ -49,7 +49,7 @@ const loadEmail = () => localStorage().getItem(EMAIL_KEY)
 
 export const saveEmail = email => {
   localStorage().setItem(EMAIL_KEY, email)
-  FS.identify(loadId(), { email })
+  FS().identify(loadId(), { email })
 }
 
 export const user = () => {

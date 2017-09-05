@@ -8,6 +8,7 @@ export default class Curve extends Component {
         viewBox="0 0 1920 635"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
         className={style.heroCurve}
       >
         <defs>

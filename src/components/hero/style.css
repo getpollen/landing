@@ -1,6 +1,7 @@
 .heroCurve {
 	position: absolute;
 	bottom: 0;
+    max-height: 40em;
 }
 
 .phone, .heroContent {

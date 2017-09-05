@@ -13,7 +13,7 @@ export default class Circle extends Component {
         >
           <g
             id="Confetti-Circle"
-            transform={`translate(${this.props.x}, ${this.props.y}) rotate(${this.props.rotation})`}
+            transform={`translate(${this.props.x}, ${this.props.y})`}
             opacity={this.props.opacity}
             stroke-width="5"
             stroke="#FFFFFF"
